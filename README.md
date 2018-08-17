@@ -1,2 +1,2 @@
 # freedomTT.github.io
-note some userful things.
+noting some userful things.
