@@ -1,58 +1,48 @@
 <style scoped>
     .index {
         width: 100%;
+        height: 100%;
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         text-align: center;
+        /*background: #5E52FE;*/
     }
 
-    .index h1 {
-        height: 150px;
-    }
-
-    .index h1 img {
-        height: 100%;
-    }
-
-    .index h2 {
-        color: #666;
-        margin-bottom: 200px;
-    }
-
-    .index h2 p {
-        margin: 0 0 50px;
-    }
-
-    .index .ivu-row-flex {
-        height: 100%;
+    .sider {
+        background: #ffffff;
+        width: 300px !important;
+        min-width: 300px !important;
+        max-width: 300px !important;
+        flex: 0 0 300px !important;
+        text-align: left;
     }
 </style>
 <template>
-    <div class="index">
-        <Row type="flex" justify="center" align="middle">
-            <Col span="24">
-                <h1>
-                    <img src="https://raw.githubusercontent.com/iview/iview/master/assets/logo.png">
-                </h1>
-                <h2>
-                    <p>Welcome to your iView app!</p>
-                    <Button type="ghost" @click="handleStart">Start iView</Button>
-                </h2>
-            </Col>
-        </Row>
-    </div>
+    <Layout class="index">
+        <Sider class="sider">
+            <CellGroup>
+                <Cell title="内容1"/>
+                <Cell title="内容2"/>
+            </CellGroup>
+        </Sider>
+        <Layout>
+            <Content style="background: #ffffff;text-align: left">
+
+            </Content>
+        </Layout>
+    </Layout>
 </template>
 <script>
     export default {
-        methods: {
-            handleStart() {
-                this.$Modal.info({
-                    title: 'Bravo',
-                    content: 'Now, enjoy the convenience of iView.'
-                });
+        data() {
+            return {
+                content: "",
             }
-        }
+        },
+        mounted() {
+        },
+        methods: {}
     };
 </script>
