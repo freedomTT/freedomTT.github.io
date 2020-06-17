@@ -1,2 +1,2 @@
 # freedomTT.github.io
-noting some userful things.
+homepage project
