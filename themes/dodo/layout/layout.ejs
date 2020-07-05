@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<%- partial('_partial/head') %>
+<body>
+<div id="container">
+    <div class="container-fluid">
+        <%- partial('_partial/sidenav', null, {}) %>
+        <%- partial('_partial/header', null, {}) %>
+        <div>
+            <section><%- body %></section>
+        </div>
+        <%- partial('_partial/footer', null, {}) %>
+    </div>
+</div>
+</body>
+</html>
