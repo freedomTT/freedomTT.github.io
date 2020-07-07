@@ -2,15 +2,14 @@
 <html>
 <%- partial('_partial/head') %>
 <body>
-<div id="container">
-    <div class="container-fluid">
-        <%- partial('_partial/sidenav', null, {}) %>
+<div class="container-fluid container-app">
+    <%- partial('_partial/sidenav', null, {}) %>
+    <div class="main-content">
         <%- partial('_partial/header', null, {}) %>
-        <div>
-            <section><%- body %></section>
-        </div>
+        <section><%- body %></section>
         <%- partial('_partial/footer', null, {}) %>
     </div>
 </div>
 </body>
+<%- partial('_partial/scripts') %>
 </html>
