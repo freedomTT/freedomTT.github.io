@@ -1,0 +1,6 @@
+<div class="post-head">
+    <div>发布日期：<%= date(page.date) %></div>
+    <div>更新日期：<%= date(page.updated) %></div>
+    <div>分类：<%- list_categories(page.categories, {show_count: false, style: 'none', separator: ' > '}) %></div>
+    <div>标签：<%- list_tags(page.tags, {show_count: false, style: 'none'}) %></div>
+</div>

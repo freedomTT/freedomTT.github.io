@@ -1,1 +1,12 @@
-<%- partial('_partial/article', {post: page, index: false}) %>
+<div class="post">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"><%- page.title %></h5>
+            <%- partial('_partial/post-head', {}) %>
+            <div class="post-content">
+                <%- page.content %>
+            </div>
+        </div>
+    </div>
+</div>
+

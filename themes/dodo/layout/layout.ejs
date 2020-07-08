@@ -3,11 +3,13 @@
 <%- partial('_partial/head') %>
 <body>
 <div class="container-fluid container-app">
-    <%- partial('_partial/sidenav', null, {}) %>
-    <div class="main-content">
-        <%- partial('_partial/header', null, {}) %>
-        <section><%- body %></section>
-        <%- partial('_partial/footer', null, {}) %>
+    <div class="container-content">
+        <%- partial('_partial/sidenav', null, {}) %>
+        <div class="main-content">
+            <%- partial('_partial/header', null, {}) %>
+            <section><%- body %></section>
+            <%- partial('_partial/footer', null, {}) %>
+        </div>
     </div>
 </div>
 </body>

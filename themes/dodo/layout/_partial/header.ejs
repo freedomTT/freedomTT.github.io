@@ -2,19 +2,19 @@
     <div class="navbar">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link pl-lg-0 active" href="#">首页</a>
+                <a class="nav-link pl-0 active" href="/#">首页</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                    aria-expanded="false">文章</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">归档</a>
-                    <a class="dropdown-item" href="#">分类</a>
-                    <a class="dropdown-item" href="#">标签</a>
+                    <a class="dropdown-item" href="<%- url_for('/archives') %>">归档</a>
+                    <a class="dropdown-item" href="<%- url_for('/categories') %>">分类</a>
+                    <a class="dropdown-item" href="<%- url_for('/tags') %>">标签</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">关于</a>
+                <a class="nav-link" href="<%- url_for('/about') %>">关于</a>
             </li>
         </ul>
     </div>
