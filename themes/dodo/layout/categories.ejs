@@ -1,0 +1,13 @@
+<%
+let categoryList = []
+site.categories.each(function (category, i) {
+    categoryList.push(category)
+})
+%>
+
+<% categoryList.forEach(item => { %>
+    <div>
+        <%= item.name %>
+        <%= item.length %>
+    </div>
+<% }) %>

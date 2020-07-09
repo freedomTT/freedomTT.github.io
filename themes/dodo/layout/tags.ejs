@@ -1,1 +1,14 @@
-tags
+<%
+let tagList = []
+site.tags.each(function (tag, i) {
+    console.log(tag)
+    tagList.push(tag)
+})
+%>
+
+<% tagList.forEach(item => { %>
+    <div>
+        <%= item.name %>
+        <%= item.length %>
+    </div>
+<% }) %>

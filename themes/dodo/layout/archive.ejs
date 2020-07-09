@@ -1,1 +1,27 @@
-<%- partial('_partial/archive', {pagination: config.archive, index: true}) %>
+<%
+let dataTree = []
+site.posts.each(function (post, i) {
+    var y = post.date.year();
+    let hasYear = 0
+    dataTree.forEach((item) => {
+        if (item.year === y) {
+            hasYear = 1
+            item.posts.push(post)
+        }
+    })
+    if (!hasYear) {
+        dataTree.push({
+            year: y,
+            posts: [post]
+        })
+    }
+})
+dataTree.sort((a, b) => b.year - a.year)
+%>
+
+<% dataTree.forEach(item => { %>
+    <div><%= item.year %></div>
+    <% item.posts.forEach(post => { %>
+        <div><%= post.date + ' ' + post.title %></div>
+    <% }) %>
+<% }) %>
