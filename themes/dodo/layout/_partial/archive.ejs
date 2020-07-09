@@ -1,1 +1,26 @@
-aa
+<%
+let dataTree = []
+site.posts.each(function (post, i) {
+    var y = post.date.year();
+    let hasYear = 0
+    dataTree.forEach((year) => {
+        if (year === y) {
+            hasYear = 1
+            year.posts.push(post)
+        }
+    })
+    if (!hasYear) {
+        dataTree.push({
+            year: y,
+            posts: [post]
+        })
+    }
+})
+%>
+
+<% dataTree.forEach(item => { %>
+    <div><%= item.year %></div>
+    <% item.posts.forEach(post => { %>
+        <div><%= post.date + ' ' + post.title %></div>
+    <% }) %>
+<% }) %>

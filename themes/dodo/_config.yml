@@ -1,0 +1,7 @@
+#菜单导航
+menu:
+  home: /
+  archives: /archives
+  categories: /categories
+  tags: /tags
+  about: /about
