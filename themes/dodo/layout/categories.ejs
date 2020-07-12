@@ -7,7 +7,6 @@ site.categories.each(function (category, i) {
 
 <% categoryList.forEach(item => { %>
     <div>
-        <%= item.name %>
-        <%= item.length %>
+        <a href="<%- url_for(item.path) %>"><%= item.name %><%= item.length %></a>
     </div>
 <% }) %>

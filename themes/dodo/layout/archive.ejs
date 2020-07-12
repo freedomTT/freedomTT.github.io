@@ -1,7 +1,33 @@
 <%
+let posts = []
 let dataTree = []
-site.posts.each(function (post, i) {
-    var y = post.date.year();
+// 如果有分类 过滤其他类型
+if (page.category) {
+    posts = site.posts.filter(post => {
+        let has = 0;
+        post.categories.forEach(category => {
+            if (page.category === category.name) {
+                has = 1
+            }
+        })
+        return has
+    })
+} else if (page.tag) {
+    posts = site.posts.filter(post => {
+        let has = 0;
+        post.tags.forEach(tag => {
+            if (page.tag === tag.name) {
+                has = 1
+            }
+        })
+        return has
+    })
+} else {
+    posts = site.posts
+}
+
+posts.each(function (post) {
+    let y = post.date.year();
     let hasYear = 0
     dataTree.forEach((item) => {
         if (item.year === y) {
@@ -22,6 +48,7 @@ dataTree.sort((a, b) => b.year - a.year)
 <% dataTree.forEach(item => { %>
     <div><%= item.year %></div>
     <% item.posts.forEach(post => { %>
-        <div><%= post.date + ' ' + post.title %></div>
+        <p><a href="<%- url_for(post.path) %>"><%= post.date %><%= post.title %></a></p>
     <% }) %>
 <% }) %>
+

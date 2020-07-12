@@ -1,14 +1,12 @@
 <%
 let tagList = []
-site.tags.each(function (tag, i) {
-    console.log(tag)
+site.tags.each(function (tag) {
     tagList.push(tag)
 })
 %>
 
 <% tagList.forEach(item => { %>
     <div>
-        <%= item.name %>
-        <%= item.length %>
+        <a href="<%- url_for(item.path) %>"><%= item.name %><%= item.length %></a>
     </div>
 <% }) %>
