@@ -2,17 +2,21 @@
 .devb
   border 1px dashed red
 
+@font-face
+  font-family 'Cascadia'
+  src url('/font/Cascadia-Code-Regular-2.ttf')
+
 body
   position absolute
   width 100%
   height 100%
   color #8492a6
-  font-family Nunito, sans-serif
+  font-family Cascadia, microsoft yahei, sans-serif;
   font-size 1rem
   font-weight 400
   line-height 1.7
   text-align left
-  background-color #f8f8fb
+  background-color #000000
 
 .container-app
   position absolute
@@ -20,31 +24,16 @@ body
   height 100%
   overflow-x hidden
 
-  &:before {
-    content ""
-    position absolute
-    top 0
-    left 0
-    width 100%
-    z-index -1
-    pointer-events none
-    height 430px
-    background-color #6e00ff
-    border-bottom-left-radius 2.5rem
-  }
-
   .container-content
     position relative
-    width 100%
+    width 90%
     overflow-x hidden
     margin auto
-    max-width 1420px
     display flex
     align-items flex-start
 
     .sidenav
       display block
-      margin-left 40px
       width 250px
       min-width 250px
 
@@ -74,6 +63,15 @@ body
             width 6rem
             height 6rem
 
+    .main-content
+      width 100%
+      max-width calc(100% - 250px)
+      padding-left 10px
+
+      @media screen and (max-width: 950px)
+        max-width 100%
+        padding-left 0
+
     .header
       position relative
       width 100%
@@ -92,15 +90,6 @@ body
       width 100%
       padding 15px
       font-size .8rem
-
-    .main-content
-      width 100%
-      max-width calc(100% - 250px)
-      padding-left 40px
-
-      @media screen and (max-width: 950px)
-        max-width 100%
-        padding-left 0
 
     .index
       padding 15px

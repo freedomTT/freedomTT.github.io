@@ -1,49 +1,42 @@
 <div class="index">
-    <h1>welcome</h1>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">列表</h5>
-            <%
-            page.posts.sort("date", "desc").each(function(post, i){
-                if (page.prev == 0 && i < 1) {
-                    return true;
-                }
-            %>
-            <div class="index_list">
-                <a id="index_post_title" href="/<%- post.path %>"><%- post.title %></a><br/>
+    <% page.posts.sort("date", "asc").each(function(post, i){
+        if (page.prev == 0 && i < 1) {
+            return true;
+        } %>
+        <div class="post">
+            <div class="post-title"><a href="/<%- post.path %>"><%- post.title %></a></div>
 
-                <div class="line_1">
-                    <div class="index_post_date">
-                        <%- full_date(post.date, "YYYY MM DD") %>
-                    </div>
+            <div>
+                <div>
+                    <%- full_date(post.date, "YYYY MM DD") %>
                 </div>
-
-                <div class="blank">
-                    <% post.tags.forEach(function(tag){ %>
-                        <a class="index_post_tag" href="/tags/<%- tag.name %>">
-                            <%- tag.name %>
-                        </a>
-                    <% }) %>
-                    <% post.categories.forEach(function(tag){ %>
-                        <a class="index_post_tag" href="/tags/<%- tag.name %>">
-                            <%- tag.name %>
-                        </a>
-                    <% }) %>
-                </div>
-                <div class="index_post_excerpt">
-                    <%- post.excerpt %>
-                </div>
-                <a class="more" href="/<%- post.path %>">阅读更多</a>
             </div>
-            <% }) %>
+
+            <div class="blank">
+                <% post.tags.forEach(function(tag){ %>
+                    <a class="index_post_tag" href="/tags/<%- tag.name %>">
+                        <%- tag.name %>
+                    </a>
+                <% }) %>
+                <% post.categories.forEach(function(tag){ %>
+                    <a class="index_post_tag" href="/tags/<%- tag.name %>">
+                        <%- tag.name %>
+                    </a>
+                <% }) %>
+            </div>
+            <div class="index_post_excerpt">
+                <%- post.excerpt %>
+            </div>
+            <a class="more" href="/<%- post.path %>">阅读更多</a>
         </div>
-        <section class="paginator">
-            <% if (page.total > 1) { %>
-                <%- paginator({
-                    prev_text: '<',
-                    next_text: '>'
-                }) %>
-            <% } %>
-        </section>
-    </div>
+    <% }) %>
+
+    <section class="paginator">
+        <% if (page.total > 1) { %>
+            <%- paginator({
+                prev_text: '<',
+                next_text: '>'
+            }) %>
+        <% } %>
+    </section>
 </div>
