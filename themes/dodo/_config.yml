@@ -5,3 +5,6 @@ menu:
   categories: /categories
   tags: /tags
   about: /about
+
+# Article default cover image
+cover: /images/default-cover.jpg

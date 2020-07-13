@@ -1,33 +1,26 @@
 <div class="index">
-    <% page.posts.sort("date", "asc").each(function(post, i){
-        if (page.prev == 0 && i < 1) {
-            return true;
-        } %>
-        <div class="post">
+    <% page.posts.sort("date", "desc").each(function(post, i){ %>
+        <div class="post-item">
+            <div>
+                <% post.categories.forEach(function(tag){ %>
+                    「<a class="post-category" href="/tags/<%- tag.name %>"><%- tag.name %></a>」
+                <% }) %>
+                <span class="post-date"><%- full_date(post.date, "LL") %></span>
+            </div>
             <div class="post-title"><a href="/<%- post.path %>"><%- post.title %></a></div>
 
             <div>
-                <div>
-                    <%- full_date(post.date, "YYYY MM DD") %>
-                </div>
+                <% post.tags.forEach(function(tag){ %>
+                    <a class="post-tag" href="/tags/<%- tag.name %>"><%- tag.name %></a>
+                <% }) %>
             </div>
 
-            <div class="blank">
-                <% post.tags.forEach(function(tag){ %>
-                    <a class="index_post_tag" href="/tags/<%- tag.name %>">
-                        <%- tag.name %>
-                    </a>
-                <% }) %>
-                <% post.categories.forEach(function(tag){ %>
-                    <a class="index_post_tag" href="/tags/<%- tag.name %>">
-                        <%- tag.name %>
-                    </a>
-                <% }) %>
-            </div>
-            <div class="index_post_excerpt">
+            <div class="post-content">
+                <div class="post-bg" style="background-image:
+                        radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #000000),
+                        url(<%- post.cover || theme.cover %>);"></div>
                 <%- post.excerpt %>
             </div>
-            <a class="more" href="/<%- post.path %>">阅读更多</a>
         </div>
     <% }) %>
 

@@ -2,9 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/obsidian" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/themes/icarus" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/themes/landscape" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/themes/obsidian" vcs="Git" />
   </component>
 </project>
