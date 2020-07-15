@@ -1,12 +1,19 @@
 .post-item
   margin-bottom 50px
 
+  &:hover
+    color #eeeeee
+    .post-title
+      background-position: 3000px 0;
+
   .post-title
     font-size 40px
-    background: linear-gradient(to right, #b2fefa, #0ed2f7, #0052d4);
+    background-image: linear-gradient(to right, #49b4fe, #0ed2f7, #0539d4, #49b4fe);
     -webkit-text-fill-color: transparent
     -webkit-background-clip: text
+    background-repeat: repeat
     font-weight 600
+    transition background-position 10s
 
   .post-tag
     border 2px solid rgba(153, 153, 153, 0.2)
@@ -31,14 +38,17 @@
   .post-content
     position relative
     margin-top 20px
-    max-width 1000px
+    max-width 1100px
+    transition color 1s
 
     .post-bg
       position absolute
       right 0
       top 0
-      width: 400px
-      height 400px
+      width 80%
+      max-width: 700px
+      height 100%
+      max-height 400px
       background-repeat no-repeat
       background-size cover
       background-position 50% 50%

@@ -7,7 +7,7 @@
                 <% }) %>
                 <span class="post-date"><%- full_date(post.date, "LL") %></span>
             </div>
-            <div class="post-title"><a href="/<%- post.path %>"><%- post.title %></a></div>
+            <div class="post-title cursor-pointer"><a href="/<%- post.path %>"><%- post.title %></a></div>
 
             <div>
                 <% post.tags.forEach(function(tag){ %>
