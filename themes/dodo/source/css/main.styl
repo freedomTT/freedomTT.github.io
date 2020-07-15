@@ -2,7 +2,6 @@
   font-family 'Cascadia'
   src url('/font/Cascadia-Code-Regular-2.ttf')
 
-
 body
   position absolute
   width 100%
@@ -40,8 +39,8 @@ body
 
     .sidenav
       display block
-      width 200px
-      min-width 200px
+      width 250px
+      min-width 250px
 
       @media screen and (max-width: 950px)
         display none
@@ -74,7 +73,7 @@ body
 
     .main-content
       width 100%
-      max-width calc(100% - 200px)
+      max-width calc(100% - 250px)
 
       @media screen and (max-width: 950px)
         max-width 100%
@@ -104,3 +103,21 @@ body
 
     .card
       box-shadow 0 0.75rem 1.5rem rgba(18, 38, 63, .03);
+
+    .pagination
+      display: flex;
+      padding-left: 0;
+      list-style: none;
+      border-radius: 0.25rem;
+
+    .page-number, .extend
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      border: 0;
+      text-align center
+      border-radius: 6px;
+      background-image: linear-gradient(125deg, #49b4fe, #0539d4);
+      color: #fff;
+      margin-right: 12px;
+

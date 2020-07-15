@@ -1,6 +1,4 @@
 (function () {
-	hljs.configure({
-		tabReplace: '    ', // 4 spaces
-	});
-	hljs.initHighlightingOnLoad();
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
 })();
