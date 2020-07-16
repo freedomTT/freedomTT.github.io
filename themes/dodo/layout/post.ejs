@@ -1,12 +1,29 @@
-<div class="post">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title"><%- page.title %></h5>
-            <%- partial('_partial/post-head', {}) %>
-            <div class="post-content">
-                <%- page.content %>
-            </div>
+<div class="post-page">
+    <div class="post-item">
+        <div class="post-title cursor-text"><%- page.title %></div>
+
+        <div class="post-desc">
+            分类：
+            <% page.categories.forEach(function(tag){ %>
+                <a class="post-category" href="/tags/<%- tag.name %>"><%- tag.name %></a>
+            <% }) %>
+        </div>
+        <div class="post-desc">
+            标签：
+            <% page.tags.forEach(function(tag){ %>
+                <a class="post-tag" href="/tags/<%- tag.name %>"><%- tag.name %></a>
+            <% }) %>
+        </div>
+        <div class="post-desc">
+            日期：<span class="post-date"><%- full_date(page.date, "LL") %></span>
+        </div>
+
+        <div class="post-content">
+            <div class="post-bg" style="background-image:
+                    radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #000000),
+                    url(<%- page.cover || theme.cover %>);"></div>
+            <%- page.excerpt %>
         </div>
     </div>
-</div>
 
+</div>

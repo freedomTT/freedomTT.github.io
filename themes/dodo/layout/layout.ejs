@@ -4,7 +4,9 @@
 <body>
 <div class="container-fluid container-app">
     <div class="container-content">
-        <%- partial('_partial/sidenav', null, {}) %>
+        <% if( is_home() || is_current('archives')  || is_current('tags') || is_current('categories')){ %>
+            <%- partial('_partial/sidenav', null, {}) %>
+        <% } %>
         <div class="main-content">
             <%- partial('_partial/header', null, {}) %>
             <section><%- body %></section>

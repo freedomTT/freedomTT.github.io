@@ -4,14 +4,14 @@
             <li class="nav-item">
                 <a class="nav-link pl-0 active" href="<%- url_for(theme.menu['home']) %>">首页</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                   aria-expanded="false">文章</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="<%- url_for(theme.menu['archives']) %>">归档</a>
-                    <a class="dropdown-item" href="<%- url_for(theme.menu['categories']) %>">分类</a>
-                    <a class="dropdown-item" href="<%- url_for(theme.menu['tags']) %>">标签</a>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="<%- url_for(theme.menu['archive']) %>">归档</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%- url_for(theme.menu['category']) %>">分类</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%- url_for(theme.menu['tag']) %>">标签</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<%- url_for(theme.menu['about']) %>">关于</a>

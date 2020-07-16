@@ -1,0 +1,94 @@
+.timeline
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  article, section, time, aside {
+    display: block;
+  }
+
+  .point-time {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 17px;
+    left: 20%;
+    margin-left: -4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #ffffff;
+  }
+
+  .things
+    font-size 18px
+
+  .text-blue {
+    color #5eb5fe
+  }
+
+  .point-red {
+    background-color: #e00066;
+  }
+
+
+  .content {
+    width: 100%;
+    margin: 30px auto;
+  }
+
+  .content article {
+    position: relative;
+  }
+
+  .content article h3 {
+    width: 15%;
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
+    font-size: 2em;
+    color: #5c5c5c;
+    padding: 10px 0 20px;
+    margin-bottom 10px
+  }
+
+  .content article section {
+    padding: 0 0 17px;
+    position: relative;
+  }
+
+  .content article section:before {
+    content: "";
+    width: 1px;
+    top: 17px;
+    bottom: -17px;
+    left: 20%;
+    margin-left 2px
+    background: #e6e6e6;
+    position: absolute;
+  }
+
+  .content article section:last-child:before {
+    display: none;
+  }
+
+  .content article section time {
+    width: 15%;
+    display: block;
+    position: absolute;
+  }
+
+  .content article section time > span {
+    display: block;
+    text-align: right;
+  }
+
+  .content article section aside {
+    color: #454545;
+    margin-left: 25%;
+    padding-bottom: 15px;
+  }
+
+  .content article section .brief {
+    color: #5c5c5c;
+  }

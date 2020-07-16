@@ -1,9 +1,9 @@
 #菜单导航
 menu:
   home: /
-  archives: /archives
-  categories: /categories
-  tags: /tags
+  archive: /archives
+  category: /categories
+  tag: /tags
   about: /about
 
 # Article default cover image
