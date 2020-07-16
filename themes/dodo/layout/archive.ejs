@@ -44,45 +44,40 @@ posts.each(function (post) {
 })
 dataTree.sort((a, b) => b.year - a.year)
 %>
+<div class="index-container">
 
-<!--<% dataTree.forEach(item => { %>-->
-<!--    <div><%= item.year %></div>-->
-<!--    <% item.posts.forEach(post => { %>-->
-<!--        <p><a href="<%- url_for(post.path) %>"><%= post.date %><%= post.title %></a></p>-->
-<!--    <% }) %>-->
-<!--<% }) %>-->
-
-<% dataTree.forEach(item => { %>
-    <div class="timeline">
-        <div class="content">
-            <article>
-                <h3><%= item.year %></h3>
-                <% item.posts.forEach(post => { %>
-                    <section>
-                        <span class="point-time point-red"></span>
-                        <time>
-                            <span><%= post.date.format('LL') %></span>
-                            <span>
-                                <% post.categories.forEach(function(tag){ %>
-                                    <%- tag.name %>
-                                <% }) %>
-                            </span>
-                        </time>
-                        <aside>
-                            <p class="things">
+    <% dataTree.forEach(item => { %>
+        <div class="timeline">
+            <div class="content">
+                <article>
+                    <h3><%= item.year %></h3>
+                    <% item.posts.forEach(post => { %>
+                        <section>
+                            <span class="point-time point-red"></span>
+                            <time>
+                                <span><%= post.date.format('LL') %></span>
+                                <span>
+                                    <% post.categories.forEach(function(tag){ %>
+                                        <%- tag.name %>
+                                    <% }) %>
+                                </span>
+                            </time>
+                            <aside>
+                                <p class="things">
                                 <span class="text-blue">
                                     <a href="<%- url_for(post.path) %>"><%= post.title %></a></span>
-                            </p>
-                            <p class="brief">
-                                <% post.tags.forEach(function(tag){ %>
-                                    <%- tag.name %>
-                                <% }) %>
-                            </p>
-                        </aside>
-                    </section>
-                <% }) %>
-            </article>
+                                </p>
+                                <p class="brief">
+                                    <% post.tags.forEach(function(tag){ %>
+                                        <%- tag.name %>
+                                    <% }) %>
+                                </p>
+                            </aside>
+                        </section>
+                    <% }) %>
+                </article>
+            </div>
         </div>
-    </div>
 
-<% }) %>
+    <% }) %>
+</div>

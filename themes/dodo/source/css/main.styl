@@ -50,20 +50,24 @@ body
   position absolute
   width 100%
   height 100%
-  overflow-x hidden
+  overflow hidden
+  padding 0
 
   .container-content
     position relative
-    width 90%
-    max-width 1400px
+    width 100%
+    height 100%
     margin auto
     display flex
     align-items flex-start
 
     .sidenav
+      position relative
       display block
       width 250px
       min-width 250px
+      height 100%
+      border-right 2px dashed rgba(254, 87, 131, 0.65)
 
       @media screen and (max-width: 950px)
         display none
@@ -78,6 +82,7 @@ body
       .sidenav-user
         height 290px
         text-align center
+        width 100%
 
         .avatar
           position relative
@@ -94,14 +99,31 @@ body
         .sidenav-icon
           width 50%
 
+      .nav-container
+        position absolute
+        bottom 10%
+        right 0
+        width: 120px;
+        transform translateX(70px)
+
+        .nav-item
+          padding 10px 0
+
     .main-content
+      position relative
       width 100%
+      height 100%
       max-width calc(100% - 250px)
-      margin auto
 
       @media screen and (max-width: 950px)
         max-width 100%
         padding-left 0
+
+      .main-content-scroll
+        position absolute
+        width: 100%;
+        height 100%
+        overflow: auto;
 
     .header
       position relative
@@ -121,9 +143,14 @@ body
       width 100%
       padding 15px
       font-size .8rem
+      text-align center
 
-    .index
+    .index-container
       padding 15px
+      max-width: 1000px;
+      width: 90%;
+      margin auto
+
 
     .card
       box-shadow 0 0.75rem 1.5rem rgba(18, 38, 63, .03);
@@ -261,4 +288,33 @@ body
     }
   }
 
+.cta-active
+  color #ffffff
+  text-decoration none
+  outline: none;
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #fe3139;
 
+  span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 10px;
+  }
+
+  path.three {
+    -webkit-animation: color_anim 1s infinite 0.2s;
+    animation: color_anim 1s infinite 0.2s;
+  }
+
+  path.one {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-animation: color_anim 1s infinite 0.6s;
+    animation: color_anim 1s infinite 0.6s;
+  }
+
+  path.two {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-animation: color_anim 1s infinite 0.4s;
+    animation: color_anim 1s infinite 0.4s;
+  }

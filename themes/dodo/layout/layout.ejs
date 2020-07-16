@@ -4,13 +4,13 @@
 <body>
 <div class="container-fluid container-app">
     <div class="container-content">
-        <% if( is_home() || is_current('archives')  || is_current('tags') || is_current('categories')){ %>
-            <%- partial('_partial/sidenav', null, {}) %>
-        <% } %>
+        <%- partial('_partial/sidenav', null, {}) %>
         <div class="main-content">
-            <%- partial('_partial/header', null, {}) %>
-            <section><%- body %></section>
-            <%- partial('_partial/footer', null, {}) %>
+            <div class="main-content-scroll">
+                <%- partial('_partial/header', null, {}) %>
+                <section><%- body %></section>
+                <%- partial('_partial/footer', null, {}) %>
+            </div>
         </div>
     </div>
 </div>

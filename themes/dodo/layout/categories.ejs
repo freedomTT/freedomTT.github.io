@@ -5,7 +5,7 @@ site.categories.each(function (category, i) {
 })
 %>
 
-<div class="category-and-tags">
+<div class="category-and-tags index-container">
     <h1 class="title">「分类」</h1>
     <% categoryList.forEach(item => { %>
         <a class="cta cursor-pointer" href="<%- url_for(item.path) %>">
