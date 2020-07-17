@@ -9,7 +9,7 @@ site.tags.each(function (tag) {
     <h1 class="title">「标签」</h1>
     <% tagList.forEach(item => { %>
         <a class="cta cursor-pointer" href="<%- url_for(item.path) %>">
-            <span><%= item.name %><%= item.length %></span>
+            <span><%= item.name %> <span class="cta-number"><%= item.length %></span></span>
             <span>
                   <svg width="30px" height="15px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
                        xmlns:xlink="http://www.w3.org/1999/xlink">

@@ -53,6 +53,18 @@ body
   overflow hidden
   padding 0
 
+
+  .menu-icon-wrapper
+    position absolute
+    right 0
+    top 0
+    z-index 9999
+    transform translateY(-100px)
+    transition transform 1s
+
+    @media screen and (max-width: 950px)
+      transform translateY(0)
+
   .container-content
     position relative
     width 100%
@@ -68,9 +80,6 @@ body
       min-width 250px
       height 100%
       border-right 2px dashed rgba(254, 87, 131, 0.65)
-
-      @media screen and (max-width: 950px)
-        display none
 
       .sidenav-header
         padding 1.5rem 0
@@ -103,11 +112,28 @@ body
         position absolute
         bottom 10%
         right 0
-        width: 120px;
+        width: 130px;
         transform translateX(70px)
 
         .nav-item
           padding 10px 0
+
+      @media screen and (max-width: 950px)
+        position fixed
+        z-index 999
+        width 100%
+        background #000
+        border 0
+        padding 80px 0
+        overflow-y auto
+        transform translateY(-100%)
+        transition transform 1s
+        .nav-container
+          position relative
+          bottom auto
+          width 100%
+          text-align center
+          transform translateX(0)
 
     .main-content
       position relative
@@ -148,9 +174,39 @@ body
     .index-container
       padding 15px
       max-width: 1000px;
-      width: 90%;
+      width: 80%;
       margin auto
+      @media screen and (max-width: 950px)
+        padding-top 80px
+        width 100%
 
+      .index-container-title
+        position relative
+        display inline-block
+        font-size 30px
+        color #ff003b
+        font-weight 600
+        margin 20px 0 0 20px
+
+        &:after
+          display inline-block
+          font-size 12px
+          color #4561ff
+          width 20px
+          height 20px
+          content '」'
+          position relative
+          left 8px
+
+        &:before
+          display inline-block
+          font-size 12px
+          color #4561ff
+          position relative
+          top -10px
+          width 20px
+          height 20px
+          content '「'
 
     .card
       box-shadow 0 0.75rem 1.5rem rgba(18, 38, 63, .03);
@@ -193,6 +249,18 @@ body
   -webkit-transform: skewX(-15deg);
   transform: skewX(-15deg);
   margin-top 10px
+
+  .cta-number
+    display: inline-block;
+    border-radius: 50%;
+    width: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    text-align: center;
+    height: 16px;
+    margin-left 5px;
+    background: #ff003b;
+
 
   &:hover
     color #ffffff

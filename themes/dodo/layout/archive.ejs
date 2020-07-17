@@ -1,7 +1,15 @@
 <%
+let title = ''
 let posts = []
 let dataTree = []
 // 如果有分类 过滤其他类型
+if (page.archive) {
+    title = '归档'
+} else if (page.category) {
+    title = page.category
+} else if (page.tag) {
+    title = page.tag
+}
 if (page.category) {
     posts = site.posts.filter(post => {
         let has = 0;
@@ -45,7 +53,7 @@ posts.each(function (post) {
 dataTree.sort((a, b) => b.year - a.year)
 %>
 <div class="index-container">
-
+    <p class="index-container-title"><%- title %></p>
     <% dataTree.forEach(item => { %>
         <div class="timeline">
             <div class="content">
