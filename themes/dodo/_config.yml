@@ -6,5 +6,10 @@ menu:
   tag: /tags
   about: /about
 
+# 头像
+avatar: '/images/head.jpeg'
+qq: '/images/qq.jpeg'
+wechat: '/images/wechat.jpeg'
+
 # Article default cover image
 cover: /images/default-cover.jpg

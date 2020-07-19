@@ -16,10 +16,12 @@
             </div>
 
             <div class="post-content">
+                <div class="post-text">
+                    <%- post.excerpt %>
+                </div>
                 <div class="post-bg" style="background-image:
                         radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #000000),
                         url(<%- post.cover || theme.cover %>);"></div>
-                <%- post.excerpt %>
             </div>
             <a class="cta cursor-pointer" href="<%- url_for(post.path) %>">
                 <span>查看全文</span>

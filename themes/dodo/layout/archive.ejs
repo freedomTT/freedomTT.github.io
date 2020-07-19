@@ -6,9 +6,9 @@ let dataTree = []
 if (page.archive) {
     title = '归档'
 } else if (page.category) {
-    title = page.category
+    title = '分类：' + page.category
 } else if (page.tag) {
-    title = page.tag
+    title = '标签：' + page.tag
 }
 if (page.category) {
     posts = site.posts.filter(post => {
