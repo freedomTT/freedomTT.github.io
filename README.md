@@ -6,6 +6,6 @@
   </a>
 </p>
 
-[访问链接]: www.luozhongdao.com
-
 使用hexo搭建的个人博客。主题自己改的，不是很完善，所以没有独立发布。
+
+<a href="www.luozhongdao.com">访问连接</a>
