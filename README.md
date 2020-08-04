@@ -8,4 +8,4 @@
 
 使用hexo搭建的个人博客。主题自己改的，不是很完善，所以没有独立发布。
 
-<a href="http://www.luozhongdao.com/">访问连接</a>
+<a href="http://www.luozhongdao.com/" target="_blank">访问连接</a>
