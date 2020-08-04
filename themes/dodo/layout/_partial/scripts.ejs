@@ -1,9 +1,10 @@
-
 <%- js('js/jquery/jquery-3.0.0.min.js') %>
 <%- js('js/bootstrap/js/bootstrap.js') %>
 <%- js('highlight/highlight.pack.js') %>
 <%- js('highlight/highlightjs-line-numbers.min.js') %>
 <%- js('AnimatedMenuIcon/js/segment.min.js') %>
 <%- js('AnimatedMenuIcon/js/ease.min.js') %>
-<%- js('libs/WebGL-Fluid-Simulation-master/script.js') %>
+<% if(page && page.layout === 'about'){ %>
+    <%- js('libs/WebGL-Fluid-Simulation-master/script.js') %>
+<% } %>
 <%- js('js/main.js') %>
